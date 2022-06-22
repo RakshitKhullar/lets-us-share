@@ -24,7 +24,8 @@
             <small><%= parseInt(fileSize/1000) %> KB</small>
         </div>
         <div class="send-btn-container">
-            <a href="<%= downloadLink %>">Download file</a>
+            <!-- <a href="<%= downloadLink %>">Download file</a> -->
+             <button id = "downloadLink"> Download file  </button>
         </div>
         <% } %>
     </section>
@@ -44,6 +45,19 @@
             </path>
         </svg>
     </a>
+
+    <script> 
+        document.getElementById('downloadLink').addEventListener('click',()=>{
+            const aa = document.createElement('a');
+            aa.href = `<%= downloadLink %>`;
+            alert(aa.href)
+            aa.download = 'file'
+            document.body.appendChild(aa)
+            aa.click();
+            document.body.removeChild(aa)
+        })
+    </script>
+
 </body>
 
 </html>
