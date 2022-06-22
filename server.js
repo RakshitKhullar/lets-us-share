@@ -19,6 +19,8 @@ app.use(cors(corsOptions))
 //     "optionsSuccessStatus": 204
 //   }
 
+app.use(express.static('public'));
+
 const connectDB = require('./config/db');
 connectDB();
 
@@ -27,7 +29,6 @@ app.use(express.json());
 app.set('views', path.join(__dirname, '/views'));
 app.set('view engine', 'ejs');
 
-app.use(express.static('./public'));
 
 // Routes 
 app.use('/api/files', require('./routes/files'));
