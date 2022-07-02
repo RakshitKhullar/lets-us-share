@@ -30,6 +30,7 @@ router.post('/', (req, res) => {
       });
 });
 
+// sending mail 
 router.post('/send', async (req, res) => {
   const { uuid, emailTo, emailFrom, expiresIn } = req.body;
   if(!uuid || !emailTo || !emailFrom) {
