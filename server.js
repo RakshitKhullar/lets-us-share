@@ -21,7 +21,7 @@ connectDB();
 
 // Cors 
 const corsOptions = {
-  origin: '*'
+  origin: ['https://let-us-share.netlify.app']
 }
 
 app.use(cors(corsOptions))
